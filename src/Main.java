@@ -1,9 +1,11 @@
 import StringAndDate.*;
+import Encapsulation.*;
 
 public class Main {
     public static void main(String[] args) {
-        StringAndDate stringAndDate = new StringAndDate();
-        stringAndDate.displayString();
-        stringAndDate.displayDateAndTime();
+        ChildEncapsulation childEn = new ChildEncapsulation();
+        childEn.setName("new name set");
+        childEn.display();
+        childEn.displayVariables();
     }
 }
