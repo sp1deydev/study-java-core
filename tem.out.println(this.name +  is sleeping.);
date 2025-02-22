@@ -1,0 +1,102 @@
+[1mdiff --git a/src/AbstractAndInterface/Animal.java b/src/AbstractAndInterface/Animal.java[m
+[1mindex ec2d8a2..cb5ae14 100644[m
+[1m--- a/src/AbstractAndInterface/Animal.java[m
+[1m+++ b/src/AbstractAndInterface/Animal.java[m
+[36m@@ -1,4 +1,13 @@[m
+ package AbstractAndInterface;[m
+ [m
+[31m-public class Animal {[m
+[32m+[m[32mabstract class Animal {[m
+[32m+[m[32m    String name;[m
+[32m+[m[32m    Animal(String name) {[m
+[32m+[m[32m        this.name = name;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    abstract void makeSound();[m
+[32m+[m
+[32m+[m[32m    void sleep() {[m
+[32m+[m[32m        System.out.println(this.name + " is sleeping.");[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/src/AbstractAndInterface/Interface/Animal.java b/src/AbstractAndInterface/Interface/Animal.java[m
+[1mindex 2c2e46c..38fe277 100644[m
+[1m--- a/src/AbstractAndInterface/Interface/Animal.java[m
+[1m+++ b/src/AbstractAndInterface/Interface/Animal.java[m
+[36m@@ -1,4 +1,8 @@[m
+ package AbstractAndInterface.Interface;[m
+ [m
+ public interface Animal {[m
+[32m+[m[32m    void makeSound();[m
+[32m+[m[32m    void sleep();[m
+ }[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/src/AbstractAndInterface/Interface/Interface.java b/src/AbstractAndInterface/Interface/Interface.java[m
+[1mindex df7ad59..6677f98 100644[m
+[1m--- a/src/AbstractAndInterface/Interface/Interface.java[m
+[1m+++ b/src/AbstractAndInterface/Interface/Interface.java[m
+[36m@@ -1,4 +1,31 @@[m
+ package AbstractAndInterface.Interface;[m
+ [m
+[32m+[m[32mclass Cat implements Animal, Pet {[m
+[32m+[m[32m    String name;[m
+[32m+[m[32m    Cat(String name) {[m
+[32m+[m[32m        this.name = name;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void makeSound() {[m
+[32m+[m[32m        System.out.println(this.name + " say meow meow");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void sleep() {[m
+[32m+[m[32m        System.out.println(this.name + " is sleeping.");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void play() {[m
+[32m+[m[32m        System.out.println(this.name + " is playing.");[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+ public class Interface {[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        Cat cat = new Cat("Kitty");[m
+[32m+[m[32m        cat.makeSound();[m
+[32m+[m[32m        cat.sleep();[m
+[32m+[m[32m        cat.play();[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/src/AbstractAndInterface/Interface/Pet.java b/src/AbstractAndInterface/Interface/Pet.java[m
+[1mindex 04712e0..5046676 100644[m
+[1m--- a/src/AbstractAndInterface/Interface/Pet.java[m
+[1m+++ b/src/AbstractAndInterface/Interface/Pet.java[m
+[36m@@ -1,4 +1,5 @@[m
+ package AbstractAndInterface.Interface;[m
+ [m
+ public interface Pet {[m
+[32m+[m[32m    void play();[m
+ }[m
+[1mdiff --git a/src/AbstractAndInterface/Main.java b/src/AbstractAndInterface/Main.java[m
+[1mindex 886d175..35fe163 100644[m
+[1m--- a/src/AbstractAndInterface/Main.java[m
+[1m+++ b/src/AbstractAndInterface/Main.java[m
+[36m@@ -1,4 +1,19 @@[m
+ package AbstractAndInterface;[m
+ [m
+[32m+[m[32mclass Dog extends Animal {[m
+[32m+[m[32m    Dog(String name) {[m
+[32m+[m[32m        super(name);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    void makeSound() {[m
+[32m+[m[32m        System.out.println(this.name + " bark woof woof");[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+ public class Main {[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        Dog dog = new Dog("Buddy");[m
+[32m+[m[32m        dog.makeSound();[m
+[32m+[m[32m        dog.sleep();[m
+[32m+[m[32m    }[m
+ }[m
